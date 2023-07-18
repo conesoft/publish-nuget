@@ -1,15 +1,12 @@
 const os = require("os"),
     fs = require("fs"),
     path = require("path"),
-    globSync = require("glob").globSync,
     https = require("https"),
     spawnSync = require("child_process").spawnSync
 
 class Action {
     constructor() {
-        console.log('globSync', globSync);
-        console.log(globSync('**/*.csproj')[0]);
-        this.projectFile = process.env.INPUT_PROJECT_FILE_PATH
+        this.projectFile = process.env.INPUT_PROJECT_FILE_PATH || "src/"
         this.configuration = process.env.INPUT_BUILD_CONFIGURATION
         this.platform = process.env.INPUT_BUILD_PLATFORM
         this.packageName = process.env.INPUT_PACKAGE_NAME || process.env.PACKAGE_NAME
