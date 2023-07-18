@@ -69,6 +69,7 @@ outputs:
 
 runs:
   using: node16
+  run: npm i glob
   main: index.js
 
 branding:
