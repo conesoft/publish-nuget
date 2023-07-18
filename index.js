@@ -1,7 +1,7 @@
 const os = require("os"),
     fs = require("fs"),
     path = require("path"),
-    { globSync } = require("node-glob"),
+    globSync = require("glob").globSync,
     https = require("https"),
     spawnSync = require("child_process").spawnSync
 
