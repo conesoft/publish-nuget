@@ -6,7 +6,7 @@ const os = require("os"),
 
 class Action {
     constructor() {
-        this.projectFile = process.env.INPUT_PROJECT_FILE_PATH || "src/"
+        this.projectFile = process.env.INPUT_PROJECT_FILE_PATH || fs.readdirSync('src').filter(fn => fn.endsWith('.csproj'))[0]
         this.configuration = process.env.INPUT_BUILD_CONFIGURATION
         this.platform = process.env.INPUT_BUILD_PLATFORM
         this.packageName = process.env.INPUT_PACKAGE_NAME || process.env.PACKAGE_NAME
